@@ -11,22 +11,21 @@ class MainActivity : AppCompatActivity() {
         // create orderList
         val orderList = mutableListOf<Order>()
 
-        // create order1
-        val order1 = Order(1)
-        order1.addItem(Noodles()) // add item
-        orderList.add(order1) // add order1 in orderList
+        // create order1 and add it to orderList
+        orderList.add(Order(1)
+                .addItem(Noodles()))
 
-        // create order2
-        val order2 = Order(2)
-        order2.addItem(Noodles()) // add item
-        order2.addItem(Vegetables()) // add item
-        orderList.add(order2) // add order2 in orderList
+        // create order2 and add it to orderList
+        orderList.add(Order(2)
+                .addAll(listOf(Noodles(),Vegetables())))
 
-        // create order3
-        val order3 = Order(3)
-        val items = listOf(Noodles(), Vegetables("Carrots", "Beans", "Celery")) // create list of items
-        order3.addAll(items) // add all items
-        orderList.add(order3) // add order3 in orderList
+        // create order3 and add it to orderList
+        orderList.add(Order(3)
+                .addAll(listOf(Noodles(), Vegetables("Carrots", "Beans", "Celery"))))
+
+        // create order4 and add it to orderList
+        orderList.add(Order(4)
+                .addAll(listOf(Noodles(),Vegetables("Cabbage","Onion"))))
 
         // print each order in orderList
         for(order in orderList){

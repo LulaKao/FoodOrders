@@ -4,13 +4,15 @@ class Order(private val orderNumber: Int){
     private val itemList = mutableListOf<Item>()
 
     // add item in itemList
-    fun addItem(newItem: Item){
+    fun addItem(newItem: Item) : Order{
         itemList.add(newItem)
+        return this
     }
 
     // add all items in itemList
-    fun addAll(newItems: List<Item>){
+    fun addAll(newItems: List<Item>) : Order{
         itemList.addAll(newItems)
+        return this
     }
 
     // print the order
